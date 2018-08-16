@@ -48,7 +48,7 @@ function runApp() {
 				var newQuantity = res[0].stock_quantity - data.stock_quantity;
 				connection.query("UPDATE PRODUCTS SET ? WHERE ?", [{stock_quantity: newQuantity}, {item_id: data.item_id}], function(err, res) {
 					console.log("Your order has been placed. Congratulations!!" + productName);
-					console.log("Total Cost: " + totalCost);
+					console.log("Total Cost of the products ordered: " + totalCost);
 				});
 			}
 			connection.end();
